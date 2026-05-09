@@ -1,29 +1,17 @@
 ---
-# Trigger - when should this workflow run?
+name: Open Pull Request Handler
 on:
-  workflow_dispatch:  # Manual trigger
-
-# Alternative triggers (uncomment to use):
-# on:
-#   issues:
-#     types: [opened, reopened]
-#   pull_request:
-#     types: [opened, synchronize]
-#   schedule: daily  # Fuzzy daily schedule (scattered execution time)
-#   # schedule: weekly on monday  # Fuzzy weekly schedule
-
-# Permissions - what can this workflow access?
-# Write operations (creating issues, PRs, comments, etc.) are handled
-# automatically by the safe-outputs job with its own scoped permissions.
+  pull_request:
+    types: [opened]
 permissions:
   contents: read
   issues: read
   pull-requests: read
 
 # Tools - GitHub API access via toolsets (context, repos, issues, pull_requests)
-# tools:
-#   github:
-#     toolsets: [default]
+tools:
+  github:
+    toolsets: [default]
 
 # Network access
 network: defaults
@@ -32,6 +20,14 @@ network: defaults
 safe-outputs:
   create-issue:          # Creates issues (default max: 1)
     max: 5               # Optional: specify maximum number
+  mentions:             # Mentions users in comments or issues
+    max: 5               # Optional: specify maximum number
+  add-comment:          # Adds comments to issues or PRs
+    max: 5               # Optional: specify maximum number
+  add-labels:           # Adds labels to issues or PRs
+    max: 5               # Optional: specify maximum number
+  assign-to-user:
+
   # actions:
   # activation-comments:
   # add-comment:
@@ -96,19 +92,16 @@ safe-outputs:
 
 # pull-request-opened
 
-Describe what you want the AI to do when this workflow runs.
+Analise de pull request aberto: "${{ github.event.pull_request.title }}". Adicione um comentário com um resumo dos próximos passos, como sugestões de revisão, testes a serem realizados ou informações adicionais necessárias para avançar com a revisão do pull request.
 
 ## Instructions
 
-Replace this section with specific instructions for the AI. For example:
-
-1. Read the issue description and comments
-2. Analyze the request and gather relevant information
-3. Provide a helpful response or take appropriate action
-
-Be clear and specific about what the AI should accomplish.
-
-## Notes
-
-- Run `gh aw compile` to generate the GitHub Actions workflow
-- See https://github.github.com/gh-aw/ for complete configuration options and tools documentation
+Analise do pull request seguindo os seguintes critérios:
+- Verifique se o título e a descrição estão claros e informativos. Caso esteja vazio, solicite ao autor que forneça mais detalhes.
+- Identifique se há arquivos de código modificados e, se possível, forneça feedback inicial sobre a estrutura do código, padrões de codificação ou possíveis áreas de melhoria.
+- Se o pull request estiver relacionado a um problema específico, verifique se ele está vinculado corretamente e se a descrição aborda a solução proposta para o problema.
+- Se o pull request incluir testes, verifique se eles estão bem escritos e cobrem os casos de uso relevantes. Se não houver testes, sugira que sejam adicionados para garantir a qualidade do código.
+- Forneça orientações sobre o processo de revisão, como quem deve revisar o código, quais áreas específicas devem ser focadas ou se há alguma etapa adicional necessária antes da revisão, como a execução de testes locais ou a verificação de dependências.
+- Coloque uma tag adequada para indicar o status do pull request, utilizando as tags disponíveis no repositório.
+- Se houver alguma informação faltando ou se o pull request não atender aos critérios mínimos, forneça um feedback construtivo e solicite as correções necessárias para avançar com a revisão.
+- Se estiver tudo correto, atribua para o usuario @felipementel e adicione um comentário de aprovação, indicando que o pull request está pronto para revisão.
