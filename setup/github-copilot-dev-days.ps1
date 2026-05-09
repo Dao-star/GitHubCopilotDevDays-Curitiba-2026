@@ -8,10 +8,10 @@ $email = (Read-Host "Digite seu e-mail").ToLower()
 $packages = @(
 
     @{ Id = "Git.Git" },
-    @{ Id = "Microsoft.DotNet.SDK.10" },
-    @{ Id = "Microsoft.Powershell" },
     @{ Id = "GitHub.cli" },
     @{ Id = "GitHub.Copilot "},
+    @{ Id = "Microsoft.DotNet.SDK.10" },
+    @{ Id = "Microsoft.Powershell" },
     @{ Id = "CoreyButler.NVMforWindows" }
 )
 
