@@ -156,6 +156,7 @@ Configure o token com:
 
 > Use **Classic PATs no formato fine-grained** (`github_pat_...`).
 
+Utilize a chave `COPILOT_GITHUB_TOKEN`
 ---
 
 ## Passo 4 — Habilitar Issues no repositório
