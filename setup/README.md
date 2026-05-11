@@ -11,7 +11,7 @@ pwsh -ExecutionPolicy Bypass -File .\github-copilot-dev-days.ps1
 ## Powershell Core
 
 ````
-https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.zip
+https://github.com/PowerShell/PowerShell/releases/download/v7.6.1/PowerShell-7.6.1-win-x64.msi
 ````
 
 ````
